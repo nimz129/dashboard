@@ -128,10 +128,33 @@
 
     <h1 class="title pb-5 pt-5">Side-Effects Vaccination Prediction</h1>
     <h6 class="justify pb-5"> Please note that to predict your vaccine side-effect, your personal information such as 
-        <br> age, gender, health conditions, and smoking status are required. You are agreeing to    
+        <br> age, gender, and health conditions are required. You are agreeing to    
         <br> share your personal information by fulfilling the questions below.
     </h6>
     <h6 class="pb-5 pt-5">Please input the required information:</h6>
+
+    <form action="/result.html">
+        <label for="fname">Age between 18 - 30 [yes/no]:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+        <label for="lname">Gender [Male/Female]:</label>
+        <input type="text" id="lname" name="lname"><br><br>
+        <label for="fname">Do you have obesity? [yes/no]:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+        <label for="lname">Do you have diabetes? [yes/no]:</label>
+        <input type="text" id="lname" name="lname"><br><br>
+        <label for="fname">Do you have hypertension? [yes/no]:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+        <label for="lname">Do you have asthma? [yes/no]:</label>
+        <input type="text" id="lname" name="lname"><br><br>
+        <label for="fname">Do you have any health problem? [yes/no]:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+        <label for="lname">Vaccine brand for 1st dose [Pfizer/AstraZeneca/Sinovac]:</label>
+        <input type="text" id="lname" name="lname"><br><br>
+        <input type="submit" value="Predict">
+      </form>
+      <br><br>
+      <!-- <input type="text" id="fname" name="fname"><br><br> -->
+      <!-- <label for="lname">Having side-effect: Yes</label> -->
 
    
 </body>
