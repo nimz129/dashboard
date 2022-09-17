@@ -133,28 +133,146 @@
     </h6>
     <h6 class="pb-5 pt-5">Please input the required information:</h6>
 
-    <form action="/result.html">
+    <form action="result.html">
         <label for="fname">Age between 18 - 30 [yes/no]:</label>
-        <input type="text" id="fname" name="fname"><br><br>
+        <!-- <input type="text" id="age" name="age"> -->
+        <select name="age" id="age">
+            <option value="yes">
+                Yes
+            </option>
+            <option value="no">
+                No
+            </option>
+        </select>
+        <br><br>
+
         <label for="lname">Gender [Male/Female]:</label>
-        <input type="text" id="lname" name="lname"><br><br>
-        <label for="fname">Do you have obesity? [yes/no]:</label>
-        <input type="text" id="fname" name="fname"><br><br>
-        <label for="lname">Do you have diabetes? [yes/no]:</label>
-        <input type="text" id="lname" name="lname"><br><br>
-        <label for="fname">Do you have hypertension? [yes/no]:</label>
-        <input type="text" id="fname" name="fname"><br><br>
-        <label for="lname">Do you have asthma? [yes/no]:</label>
-        <input type="text" id="lname" name="lname"><br><br>
+        <select name="gender" id="gender">
+            <option value="male">
+                Male
+            </option>
+            <option value="female">
+                Female
+            </option>
+        </select>
+        <br><br>
+
         <label for="fname">Do you have any health problem? [yes/no]:</label>
-        <input type="text" id="fname" name="fname"><br><br>
+        <select onchange="healthlist();" name="healthproblem" id="healthproblem">
+            <option value="yes">
+                Yes
+            </option>
+            <option selected value="no">
+                No
+            </option>
+        </select>
+        <br><br>
+
+        <div id="obesity"  >
+            <label for="fname">Do you have obesity? [yes/no]:</label>
+            <select name="obesity" id="obesity">
+                <option value="yes">
+                    Yes
+                </option>
+                <option value="no">
+                    No
+                </option>
+            </select>
+            <br><br>
+        </div>
+
+        <div id="diabetes" >
+            <label for="lname">Do you have diabetes? [yes/no]:</label>
+            <select name="diabetes" id="diabetes">
+                <option value="yes">
+                    Yes
+                </option>
+                <option value="no">
+                    No
+                </option>
+            </select>
+            
+            <br><br>
+        </div>
+
+        <div id="hypertension">
+            <label for="fname">Do you have hypertension? [yes/no]:</label>
+            <select name="hypertension" id="hypertension">
+                <option value="yes">
+                    Yes
+                </option>
+                <option value="no">
+                    No
+                </option>
+            </select>
+            
+            <br><br>
+        </div>
+
+        <div id="asthma">
+            <label for="lname">Do you have asthma? [yes/no]:</label>
+            <select name="asthma" id="asthma">
+                <option value="yes">
+                    Yes
+                </option>
+                <option value="no">
+                    No
+                </option>
+            </select>
+            <br><br>
+        </div>
+        
+        
+        <!-- <input type="text" id="fname" name="fname"><br><br> -->
         <label for="lname">Vaccine brand for 1st dose [Pfizer/AstraZeneca/Sinovac]:</label>
-        <input type="text" id="lname" name="lname"><br><br>
+        <select name="vaccine" id="vaccine">
+            <option value="pfizer">
+                Pfizer
+            </option>
+            <option value="astrazeneca">
+                AstraZeneca
+            </option>
+            <option value="sinovac">
+                Sinovac
+            </option>
+        </select>
+        <br><br>
+
         <input type="submit" value="Predict">
       </form>
       <br><br>
       <!-- <input type="text" id="fname" name="fname"><br><br> -->
       <!-- <label for="lname">Having side-effect: Yes</label> -->
+
+
+<script>
+
+    init();
+
+    function healthlist() {
+        var healthprob = document.getElementById("healthproblem").value;
+        // console.log(healthprob);
+        if (healthprob == 'yes') {
+            document.getElementById("obesity").style.display='block';
+            document.getElementById("diabetes").style.display='block';
+            document.getElementById("hypertension").style.display='block';
+            document.getElementById("asthma").style.display='block';
+        }
+        else {
+            document.getElementById("obesity").style.display='none';
+            document.getElementById("diabetes").style.display='none';
+            document.getElementById("hypertension").style.display='none';
+            document.getElementById("asthma").style.display='none';
+        }
+    }
+    
+    function init() {
+        document.getElementById("obesity").style.display='none';
+        document.getElementById("diabetes").style.display='none';
+        document.getElementById("hypertension").style.display='none';
+        document.getElementById("asthma").style.display='none';
+    }
+</script>
 
    
 </body>
